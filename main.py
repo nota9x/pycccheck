@@ -7,9 +7,11 @@ import json
 
 # Variables
 webhook_url = (
-    "https://discord.com/api/webhooks/1108039759718252576/"
-    "lOCsGChC5pFRz8_Gu4c6RW0NVa8oOGpJ442lzJOKrSalxK4RNpEzE75h96gmmrCOI1q1"
+    "https://discord.com/api/webhooks/1108064649481560105/"
+    "HmLOPbYVjR262hbJUqKsAjGeKWrUwZr7BGwSENBayspaMH_nzPE3srqVzrxCUe4Vx2pH"
 )
+
+# Date stuff
 
 
 class Mdate(datetime.date):
@@ -60,15 +62,23 @@ def install_dependencies():
         exit(1)
 
 
+def update():
+    # Install required dependencies
+    try:
+        os.system('pip install --upgrade pip')
+    except Exception as e:
+        print("Error installing dependencies:", e)
+        exit(1)
+
+
 # Clear terminal
 os.system('cls' if os.name == 'nt' else 'clear')
 
 print("Welcome to the SCR Technologies Secure Payment Portal! Please wait...")
 
-# Install dependencies
+# Install dependencies & update pip, then clear
 install_dependencies()
-
-# Clear terminal
+update()
 os.system('cls' if os.name == 'nt' else 'clear')
 
 while True:
